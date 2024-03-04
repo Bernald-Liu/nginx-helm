@@ -1,0 +1,66 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 30007  # Specify a NodePort
+
+https:
+  enabled: true
+  key: |
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEpQIBAAKCAQEAwd+yykgRtHaehe20fbGeP/kDC1U2Bro81Z+nW+WCbfdllog1
+    Zmsw9jJUUDAgGCcsjKzxmhPoPd9/wPcZd0pPE36Xo3RoV9b5jYbHCOpTILKbOAP6
+    DukXNsD5Ya5lvBMf8oA2ujt+x4pN7ucm5adLi2GsDbswyLlQnrlr/LKjXwfC6ky6
+    MUXxwx6UcMzxeEjMzMSMddc/y1IkOfp08hI6jZGPJxWiRFA1lD4JMptzIWxFHvay
+    lqGn/j2Pt/ezeOTD0GAUrmTeFwpYd2uZvDgRp+8r0icI50qrthvxEJT58f0vDUng
+    Kh2JcckwdB2yzvLraPru9AO0zgSLw5o/W6munQIDAQABAoIBAQCOD3KdEo4WpEyo
+    anO1Hq+MxNRcO4YpC9KD3kbt6ZDXL077LLekYqsv29U4JOt/h0T3l8o5Upj8rYaZ
+    SPcaGBM1f69xkFzc8KNP9xBlEf7zmKxwMUnMHzRpZKHX18ioNYNVWGnBsNLHOCq/
+    AhXYdeu/KETAkwe+LTxL8iaUtflMKcb1oFO1NSA2WQjHwltC+G2cTiFz9SNEk8vn
+    vdjVDfhCKxwGTgwMmqD6I5/ce4Gv0gI7nO6igxqU4rkK818JAve9HZdVpFn/ffTj
+    gM6QlHKzJIRK0sNuJ5D3DmNwglNH5r92+0rjbwIn28dHbpnzk3svz6GdWNo9biQ2
+    VSTEzwlpAoGBAOjG/QwDzyC4g5BanvstMvm1RjvjvJem6pQoc18iUmtYd1lEnBZd
+    gbMbwSQquLr9mHLC5b1EQ3yF8w7Np5yNhVF8bTRThwFepHLE6pIAPFtPxM54vLVd
+    h4Blf019inSoOcFUlRbsioi8nVfzdClR3/iNSirxWQo3cpTUQ1gNpoWLAoGBANU3
+    IqNOGGuWNEiggpRFwYpElV3lwNiZ/NX1elSlseZB6RnuvwGPv+e+KM4g9HAypiAC
+    6rlMhBPHizMbe5b0Z0H3NJqWne+imE3a5zOh0xLLfMs7rIuXxv2lrMyxLCucVra8
+    HSplv5T0g2TpajWZygoSmCPYDI3qyRk7OQi1VjF3AoGBANpU+jfwwrAwIMafGQsC
+    xBNPIcc+vj+IAfJhVoVezet9mMQUBEs9/U8fszLXF1ncTsclYxL5GkuL4AR8hL/k
+    Ra2+hTdVOQXh3WEArfuvWO1UjoYS3P1H8rZNfPAT1m/A8hsR2J0d1HqYXwSFhujS
+    sL6S14Qbx6Y7h69swJWwiAYtAoGBAJAasZh6AdtFK5Uilt6rvsE61VEfJZW/jbj2
+    LnXjfzdGuMtEJ2hgxa1VQrL+Zvcl5E2iaw5N/r53kUc7fe5qxRc6gx0wSxJZbGLC
+    Xpzw9H2xdmjNrjKypFVukjnOTTI0eg8LWRL8rd143Q1pDNWpWXoxUw52yRVp5/zb
+    oBKYrObFAoGAK07HI6NYzQjMAjROhjP9FFoECZCmoIgtUl6ueOTpxH5u2a2E57rv
+    asdY/PvUiw1bK9Wtw8mGIBmLiFJAa+SOEGRSOQRHQEkRQ7DbaQMNW0QiPBFSjgk0
+    GGmeudJsUKwvuFRTcem2qv+b80Cbv1u7No2C7K4008OD6LHPGeDExG4=
+    -----END RSA PRIVATE KEY-----
+
+  cert: |
+    -----BEGIN CERTIFICATE-----
+    MIIDqzCCApOgAwIBAgIUYYaJpd4tgpvRBG8GoXgZc5uTjb0wDQYJKoZIhvcNAQEL
+    BQAwZTELMAkGA1UEBhMCU0cxEjAQBgNVBAgMCXNpbmdhcG9yZTESMBAGA1UEBwwJ
+    c2luZ2Fwb3JlMSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxCzAJ
+    BgNVBAMMAmN5MB4XDTI0MDMwNDAzNTE0N1oXDTI1MDMwNDAzNTE0N1owZTELMAkG
+    A1UEBhMCU0cxEjAQBgNVBAgMCXNpbmdhcG9yZTESMBAGA1UEBwwJc2luZ2Fwb3Jl
+    MSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxCzAJBgNVBAMMAmN5
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwd+yykgRtHaehe20fbGe
+    P/kDC1U2Bro81Z+nW+WCbfdllog1Zmsw9jJUUDAgGCcsjKzxmhPoPd9/wPcZd0pP
+    E36Xo3RoV9b5jYbHCOpTILKbOAP6DukXNsD5Ya5lvBMf8oA2ujt+x4pN7ucm5adL
+    i2GsDbswyLlQnrlr/LKjXwfC6ky6MUXxwx6UcMzxeEjMzMSMddc/y1IkOfp08hI6
+    jZGPJxWiRFA1lD4JMptzIWxFHvaylqGn/j2Pt/ezeOTD0GAUrmTeFwpYd2uZvDgR
+    p+8r0icI50qrthvxEJT58f0vDUngKh2JcckwdB2yzvLraPru9AO0zgSLw5o/W6mu
+    nQIDAQABo1MwUTAdBgNVHQ4EFgQUx+xuTxkY3R2pO0b8PgP1smg6Uq0wHwYDVR0j
+    BBgwFoAUx+xuTxkY3R2pO0b8PgP1smg6Uq0wDwYDVR0TAQH/BAUwAwEB/zANBgkq
+    hkiG9w0BAQsFAAOCAQEASiZj7yopsMY7udWPG1BywaQq7xzBINrFtAEdTmYJ6lP9
+    MNhHOa6Twf6dzxAvzFHKuDFU/AIJFxM/+f1yDTo5B9DIkx+9ys7kOhmu8QALDQrI
+    8iyuOM2NHmWzHZ0cD17WoNb/Ue0MLKZ5/6m/pv8fqnfRD01TcpzLkF8zkk8hScS7
+    3INVj7MxIjR1F38ABqDgEab7EQxPOdwASFYnRaRkir2g8KzvHt4LwGjj5CLV//Qr
+    SeZRzpJKKJ2h/sR9c8Y/BNdn+8D7DPFePmif3IfcZPmHsts2utEqVW2S3cnYAkfD
+    qvTZayvhSVXmOBRx7xsYmlGDhjsXZlC2Gcpkr0eDiA==
+    -----END CERTIFICATE-----
